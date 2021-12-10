@@ -7,14 +7,14 @@
 #include <cmath>
 using namespace std;
 
-const int R = 500; //rows
-const int C = 11; //cols
+const int R = 2000; //rows
+const int C = 51; //cols
 double data[R][C]; //data set
 
 void get_data() //get data from file into data set
 {
     fstream file;
-    file.open("small.txt", ios::in);
+    file.open("Ver_2_CS170_Fall_2021_LARGE_data__34.txt", ios::in);
     double val;
     
     for(int i = 0; i < R; i++)
@@ -101,7 +101,7 @@ void forward_selection()
             {
                 cout<<"\tAdding feature " << j;
                 accuracy = 100*loocv(csf, j, 0);
-                cout << " accurracy: " << accuracy << "%" << endl;
+                cout << " accuracy: " << accuracy << "%" << endl;
                 
                 if(accuracy > best_accuracy)
                 {
@@ -140,7 +140,7 @@ void backward_elim()
             {
                 cout<<"\tRemoving feature " << j;
                 accuracy = 100*loocv(csf, j, 1);
-                cout << " accurracy: " << accuracy << "%" << endl;
+                cout << " accuracy: " << accuracy << "%" << endl;
                 
                 if(accuracy > best_accuracy)
                 {
@@ -174,7 +174,7 @@ int main()
     int opt;
 
     cout << "Select search:" << endl
-         << "1 Forward selection" << endl
+         << "1. Forward selection" << endl
          << "2. Backward Elimination" << endl
          << "Enter choice: ";
 
